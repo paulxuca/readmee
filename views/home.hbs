@@ -1,0 +1,22 @@
+<div class="appLayout">
+  <div class="appSidebar">
+    <ul class="appSidebarList">
+    {{#each files}}
+      {{#if this.packageName}}
+      <li class="packageName">{{this.packageName}}</li>
+      <ol
+        class="fileList"
+        id={{this.packageName}}
+      >
+          {{#each this.files}}
+            <li>{{this.name}}</li>
+          {{/each}}
+      </ol>
+      {{/if}}
+    {{/each}}
+    </ul>
+  </div>
+  <div class="appContainer">
+
+  </div>
+</div>

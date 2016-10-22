@@ -1,0 +1,50 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.appLayout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: white;
+}
+
+.appSidebar {
+  flex: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.0677777);
+  overflow: scroll;
+  background: rgb(250, 250, 250);
+}
+
+.appSidebarList{
+  padding: 0;
+  margin: 0;
+}
+
+.appSidebarList li {
+  padding: 5px 10px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  color: #364149;
+}
+
+.appSidebarList li:hover {
+  color: #008cff;
+  transition: all 0.25s;
+}
+
+.appContainer {
+  flex: 3;
+}
+
+.fileList {
+  opacity: 0;
+  display: none;
+}
+
+.fileList.open {
+  opacity: 1;
+  display: block;
+}
