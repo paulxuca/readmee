@@ -5,6 +5,7 @@ var path = require('path');
 var glob = require('glob');
 var fs = require('fs');
 var app = express();
+var PORT = 3002;
 
 
 var modules = require('./utils/modules.js');
@@ -37,9 +38,9 @@ modules.getFileGlobs(constants.ignoredFiles, function(files){
       response.json(hbs.compile('{{#markdown}}' + data + '{{/markdown}}')()).status(200);
     });
   });
-
-
-  app.listen(3002, router.handleRouterInit);
 });
 
+module.exports = {
+  startApp: function() { app.listen(PORT, function(e) { router.handleRouterInit(e, PORT); }) },
+}
 

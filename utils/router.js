@@ -1,8 +1,8 @@
-function handleRouterInit(error) {
+function handleRouterInit(error, PORT) {
   if (error) {
     console.log(error);
   }
-  console.log('Server listening on port 3002');
+  console.log('Readmee starting at http://localhost:' + PORT);
 }
 
 function catchError(error) {
