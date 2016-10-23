@@ -12,7 +12,22 @@ function catchError(error) {
   }
 }
 
+function renderHome(request, response) {
+  response.render('home', {
+    files: files,
+  });
+}
+
+function renderEachFile(request, response) {
+  var tobeDisplayedMarkdown = files[request.params.filename].files[request.params.fileNumber];
+  fs.readFile(tobeDisplayedMarkdown.directory, 'utf-8', function(error, data){
+    response.json(hbs.compile('{{#markdown}}' + data + '{{/markdown}}')()).status(200);
+  });
+}
+
 module.exports = {
   handleRouterInit: handleRouterInit,
   catchError: catchError,
+  renderHome: renderHome,
+  renderEachFile: renderEachFile,
 };

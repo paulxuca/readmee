@@ -24,19 +24,8 @@ app.set('views', __dirname + '/views');
 
 
 modules.getFileGlobs(constants.ignoredFiles, function(files){
-
-  app.get('/', function(request, response){
-    response.render('home', {
-      files: files,
-    });
-  });
-
-  app.get('/:filename/:fileNumber', function(request, response){
-    var tobeDisplayedMarkdown = files[request.params.filename].files[request.params.fileNumber];
-    fs.readFile(tobeDisplayedMarkdown.directory, 'utf-8', function(error, data){
-      response.json(hbs.compile('{{#markdown}}' + data + '{{/markdown}}')()).status(200);
-    });
-  });
+  app.get('/', router.renderHome);
+  app.get('/:filename/:fileNumber', router.renderEachFile);
 });
 
 module.exports = {
