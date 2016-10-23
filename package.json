@@ -13,6 +13,7 @@
     "express-handlebars": "^3.0.0",
     "express-hbs": "^1.0.3",
     "glob": "^7.1.1",
-    "http-server": "^0.9.0"
+    "helper-markdown": "^0.2.1",
+    "highlight.js": "^9.7.0"
   }
 }

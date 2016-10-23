@@ -1,22 +1,32 @@
 <div class="appLayout">
   <div class="appSidebar">
-    <ul class="appSidebarList">
-    {{#each files}}
-      {{#if this.packageName}}
-      <li class="packageName">{{this.packageName}}</li>
-      <ol
-        class="fileList"
-        id={{this.packageName}}
-      >
-          {{#each this.files}}
-            <li>{{this.name}}</li>
-          {{/each}}
-      </ol>
-      {{/if}}
-    {{/each}}
-    </ul>
+    <div class="appSidebar__Search">
+      <input class="packageSearch search" placeholder="Type to search" id="searchInput">
+      </input>
+    </div>
+    <div class="appSidebar__List">
+      <ul class="appSidebarList">
+        {{#each files}}
+          {{#if this.packageName}}
+          <li class="packageName">{{this.packageName}}</li>
+          <ol class="fileList" id={{this.packageName}}>
+              {{#each this.files}}
+                <li class="subItem" data-index={{@index}}>
+                  {{this.name}}
+                </li>
+              {{/each}}
+          </ol>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
-  <div class="appContainer">
-
+  <div class="appContainerElement">
+    <div class="markdown-body">
+      <div class="appContainerPadder">
+        <div class="appContainer">
+        </div>
+      </div>
+    </div>
   </div>
 </div>
