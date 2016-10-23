@@ -18,7 +18,6 @@ hbs.registerHelper('markdown', markdown({ highlight: view.highlight }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.engine('hbs', hbs.express4({
   defaultLayout: path.join(__dirname, '/views/layout.hbs'),
-  partialsDir: path.join(__dirname, '/views/partials'),
 }));
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
