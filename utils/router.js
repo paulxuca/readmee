@@ -12,7 +12,7 @@ function catchError(error) {
   }
 }
 
-function renderHome(request, response) {
+function renderHome(request, response, files) {
   response.render('home', {
     files: files,
   });

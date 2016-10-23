@@ -24,8 +24,8 @@ app.set('views', __dirname + '/views');
 
 
 modules.getFileGlobs(constants.ignoredFiles, function(files){
-  app.get('/', router.renderHome);
-  app.get('/:filename/:fileNumber', router.renderEachFile);
+  app.get('/', function(request, response) { router.renderHome(request, response, files); });
+  app.get('/:filename/:fileNumber', function(request, response) { router.renderEachFile(request, response, files); });
 });
 
 module.exports = {
