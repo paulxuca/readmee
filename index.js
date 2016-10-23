@@ -2,8 +2,6 @@ var express = require('express');
 var hbs = require('express-hbs');
 var markdown = require('helper-markdown');
 var path = require('path');
-var glob = require('glob');
-var fs = require('fs');
 var app = express();
 var PORT = 3002;
 

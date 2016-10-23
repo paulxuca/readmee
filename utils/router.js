@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 function handleRouterInit(error, PORT) {
   if (error) {
     console.log(error);
