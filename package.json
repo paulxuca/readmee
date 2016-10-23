@@ -8,6 +8,9 @@
   },
   "author": "Paul Xu <paulxuca@gmail.com> (https://github.com/paulxuca)",
   "license": "ISC",
+  "bin": {
+    "readmee": "bin/readmee"
+  },
   "dependencies": {
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
